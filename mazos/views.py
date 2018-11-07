@@ -35,7 +35,7 @@ def ejercito_nuevo(request):
     return render(request, 'mazos/mazo_editar.html', {'formulario': formulario})
 
 def detalle_arenas(request, pk):
-    detalle_arenas = get_object_or_404(Arena, pk=pk)
+    detalle_arenas = get_object_or_404(Ejercito, pk=arena)
     return render(request, 'mazos/detalle_arenas.html', {'detalle_arenas': detalle_arenas})
 
 @login_required

@@ -2,10 +2,14 @@
 
 {% block content %}
   <div class="post">
-    <a class="btn btn-default" href="{% url 'ejercito_editar' pk=detalle_arenas.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-    <a class="btn btn-default" href="{% url 'ejercito_eliminar' pk=detalle_arenas.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
-    <h1>{{ detalle.nombre }}</h1>
-    <p>{{ detalle.tipo }}</p>
-    <p>{{ detalle.valor|linebreaksbr }}</p>
+    <a class="btn btn-default" href="{% url 'ejercito_editar' pk=detalle_arenas.arena %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    <a class="btn btn-default" href="{% url 'ejercito_eliminar' pk=detalle_arenas.arena %}"><span class="glyphicon glyphicon-remove"></span></a>
+    <h1>{{ detalle_arenas.arena }}</h1>
+
+    {% for p in detalle_arenas %}
+      <div class="post">
+        <p>{{ detalle_arenas.tropa|linebreaksbr }}</p>
+      </div>
+    {% endfor %}
   </div>
 {% endblock %}
