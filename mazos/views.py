@@ -9,6 +9,7 @@ def listar_arenas(request):
     arenas = Arena.objects.order_by('nivel')
     return render(request, 'mazos/listar_arenas.html', {'arenas' : arenas})
 
+@login_required
 def ejercito_nuevo(request):
 
     if request.method == "POST":
@@ -37,6 +38,7 @@ def detalle_arenas(request, pk):
     detalle_arenas = get_object_or_404(Arena, pk=pk)
     return render(request, 'mazos/detalle_arenas.html', {'detalle_arenas': detalle_arenas})
 
+@login_required
 def ejercito_editar(request, pk):
     ejercito = get_object_or_404(Ejercito, pk=pk)
     if request.method == "POST":
@@ -49,6 +51,7 @@ def ejercito_editar(request, pk):
         form = ArenaForm(instance=post)
     return render(request, 'mazos/mazo_editar.html', {'form': form})
 
+@login_required
 def ejercito_eliminar(request, pk):
     post = get_object_or_404(Ejercito, pk=pk)
     post.delete()
