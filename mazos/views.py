@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from .forms import ArenaForm
 from mazos.models import Tropa, Ejercito, Arena
+from django.shortcuts import redirect
+from django.contrib.auth.decorators import login_required
 
 def listar_arenas(request):
     arenas = Arena.objects.order_by('nivel')
