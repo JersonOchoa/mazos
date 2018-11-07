@@ -1,18 +1,33 @@
 h1 a {
-        color: #FCA205;
+        color: #112d4f;
 }
 
 body {
-        padding-left: 15px;
+        padding-left: 10px;
+}
+
+#sticky {
+  width:100%;
+  height:50px;
+  padding-top:10px;
+  background:black;
+  color:white;
+  font-weight:bold;
+  font-size:24px;
+  text-align:center;
+  position:fixed;    /*Here's what sticks it*/
+  bottom:0;          /*to the bottom of the window*/
+  left:0;            /*and to the left of the window.*/
+  font-family: 'Fjalla One';
 }
 
 h1 a {
-        color: #FCA205;
-        font-family: 'Lobster';
+        color: #112d4f;
+        font-family: 'Fjalla One';
 }
 
 .page-header {
-        background-color: #ff9400;
+        background-color: #112d4f;
         margin-top: 0;
         padding: 20px 20px 20px 40px;
 }
@@ -23,12 +38,26 @@ h1 a {
         text-decoration: none;
 }
 
+.row img{
+
+}
+
+.page-header p{
+        color: #ffffff;
+        font-size: 12pt;
+        text-decoration: none;
+}
+
 .content {
         margin-left: 40px;
 }
 
+.page-header h2{
+        color: #ffffff;
+}
+
 h1, h2, h3, h4 {
-        font-family: 'Lobster', cursive;
+        font-family: 'Fjalla One', cursive;
 }
 
 .date {

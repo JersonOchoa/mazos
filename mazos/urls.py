@@ -9,6 +9,6 @@ urlpatterns = [
     url(r'^$', views.listar_arenas, name='listar_arenas'),
     url(r'^mazos/(?P<pk>[0-9]+)/$', views.detalle_arenas,  name='detalle_arenas'),
     url(r'^mazos/nuevo/$', views.ejercito_nuevo, name='ejercito_nuevo'),
-    url(r'^mazos/(?P<pk>[0-9]+)/editar/$', views.ejercito_editar, name='ejercito_editar'),
-    url(r'^mazos/(?P<pk>\d+)/eliminar/$', views.ejercito_eliminar, name='ejercito_eliminar'),
+    url(r'^mazos/(?P<pk>[0-9]+)/ejercito_editar/$', views.ejercito_editar, name='ejercito_editar'),
+    url(r'^mazos/(?P<pk>\d+)/ejercito_eliminar/$', views.ejercito_eliminar, name='ejercito_eliminar'),
     ]

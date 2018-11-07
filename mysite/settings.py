@@ -25,7 +25,7 @@ SECRET_KEY = 'e@t*=e&#6&r_7g@!wrv3f!qe6n_o%1o$*-_suaep9qo3%5!9id'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['rayo2102.pythonanywhere.com']
+ALLOWED_HOSTS = ['rayo2102.pythonanywhere.com','127.0.0.1']
 
 
 # Application definition
@@ -120,3 +120,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
