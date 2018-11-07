@@ -1,0 +1,11 @@
+{% extends 'mazos/base.html' %}
+
+{% block content %}
+  <div class="post">
+    <a class="btn btn-default" href="{% url 'post_edit' pk=detalle_arenas.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    <a class="btn btn-default" href="{% url 'post_remove' pk=detalle_arenas.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+    <h1>{{ detalle.nombre }}</h1>
+    <p>{{ detalle.tipo }}</p>
+    <p>{{ detalle.valor|linebreaksbr }}</p>
+  </div>
+{% endblock %}

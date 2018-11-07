@@ -3,6 +3,10 @@ from django.contrib import messages
 from .forms import ArenaForm
 from mazos.models import Tropa, Ejercito, Arena
 
+def listar_arenas(request):
+    arenas = Arena.objects.order_by('nivel')
+    return render(request, 'mazos/listar_arenas.html', {'arenas' : arenas})
+
 def ejercito_nuevo(request):
 
     if request.method == "POST":
@@ -26,3 +30,24 @@ def ejercito_nuevo(request):
         formulario = ArenaForm()
 
     return render(request, 'mazos/mazo_editar.html', {'formulario': formulario})
+
+def detalle_arenas(request, pk):
+    detalle_arenas = get_object_or_404(Arena, pk=pk)
+    return render(request, 'mazos/detalle_arenas.html', {'detalle_arenas': detalle_arenas})
+
+def ejercito_editar(request, pk):
+    ejercito = get_object_or_404(Ejercito, pk=pk)
+    if request.method == "POST":
+        form = ArenaForm(request.POST, instance=post)
+        if form.is_valid():
+            ejercito = form.save(commit=False)
+            ejercito.save()
+            return redirect('detalle_arenas', pk=ejercito.arena)
+    else:
+        form = ArenaForm(instance=post)
+    return render(request, 'mazos/mazo_editar.html', {'form': form})
+
+def ejercito_eliminar(request, pk):
+    post = get_object_or_404(Ejercito, pk=pk)
+    post.delete()
+    return redirect('listar_arenas')

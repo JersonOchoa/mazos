@@ -1,0 +1,13 @@
+{% extends 'mazos/base.html' %}
+
+{% block content %}
+  {% for p in arenas %}
+    <div class="post">
+      <div class="date">
+        {{ p.nivel }}
+      </div>
+      <h1><a href="{% url 'detalle_arena' pk=p.pk %}" target="blank">{{ p.nombre }}</a></h1>
+      <p>{{ p.texto|linebreaksbr }}</p>
+    </div>
+  {% endfor %}
+{% endblock %}
